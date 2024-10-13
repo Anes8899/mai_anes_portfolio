@@ -37,6 +37,7 @@ const GlobalStyles = createGlobalStyle`
   --color-indigo-700: #4338ca;
 
   --color-red-100: #fee2e2;
+  --color-red-200: #F95454;
   --color-red-700: #b91c1c;
   --color-red-800: #991b1b;
 
@@ -69,10 +70,11 @@ const GlobalStyles = createGlobalStyle`
 
 html {
   font-size: 62.5%;
+  
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family:'Roboto',"Poppins", sans-serif;
   color: var(--color-grey-700);
 
   transition: color 0.3s, background-color 0.3s;
@@ -88,6 +90,7 @@ select {
   font: inherit;
   color: inherit;
 }
+
 
 button {
   cursor: pointer;
@@ -134,6 +137,7 @@ h5,
 h6 {
   overflow-wrap: break-word;
   hyphens: auto;
+
 }
 
 img {
@@ -142,6 +146,16 @@ img {
   /* For dark mode */
   filter: grayscale(var(--image-grayscale)) opacity(var(--image-opacity));
 }
+@media screen and (max-width: 480px) {
+  
+    h1{
+      font-size: small;
+    }
+    h2,h3{
+      font-size: small;
+    }
+    
+  }
 
 `;
 
