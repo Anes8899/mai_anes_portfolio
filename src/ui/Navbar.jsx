@@ -15,10 +15,28 @@ const Nav = styled.nav`
 
 const StyledLink = styled(Link)`
   text-decoration: none;
+  &:active {
+    color: red;
+  }
 `;
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+
+  function handleClick(e) {
+    const id = e.target.id;
+    console.log(id);
+    console.log("clicked");
+    // {
+    //   id === "home" && (e.target.style.color = "red");
+    //   id === "work" && (e.target.style.color = "red");
+    // }
+    // {
+    //   id === "home"
+    //     ? (e.target.style.color = "red")
+    //     : (e.target.style.color = "white");
+    // }
+  }
 
   function handleOpen() {
     setMenuOpen(!menuOpen);
@@ -32,10 +50,14 @@ function Navbar() {
         <nav>
           <Ul open={menuOpen}>
             <li>
-              <StyledLink to={"/"}>Home</StyledLink>
+              <StyledLink to={"/"} id="home" onClick={handleClick}>
+                Home
+              </StyledLink>
             </li>
             <li>
-              <StyledLink to={"/work"}>Work</StyledLink>
+              <StyledLink to={"/work"} id="work" onClick={handleClick}>
+                Work
+              </StyledLink>
             </li>
             <li>
               <StyledLink to={"/about"}>About</StyledLink>
